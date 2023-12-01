@@ -1,24 +1,18 @@
 import java.util.*
-
 fun main(){
     println("Hola mundo")
     // INMUTABLES (NO se reasignan "=")
     val inmutable: String = "Daniela";
-    // inmutable = "Lissette";
-
+    // inmutable = "Vicente";
     // Mutables (Re asignar)
-    var mutable: String = "Daniela";
-    mutable = "Lissette";
-
-
-
+    var mutable: String = "Lissette";
+    mutable = "Daniela";
     //  val > var
     // Duck Typing
-    var ejemploVariable = " Daniela Roman "
+    var ejemploVariable = " Daniela Román "
     val edadEjemplo: Int = 12
     ejemploVariable.trim()
     // ejemploVariable = edadEjemplo;
-
     // Variable primitiva
     val nombreProfesor: String = "Daniela Roman"
     val sueldo: Double = 1.2
@@ -26,8 +20,6 @@ fun main(){
     val mayorEdad: Boolean = true
     // Clases Java
     val fechaNacimiento: Date = Date()
-
-
     // SWITCH
     val estadoCivilWhen = "C"
     when (estadoCivilWhen){
@@ -42,7 +34,6 @@ fun main(){
         }
     }
     val coqueteo = if (estadoCivilWhen == "S") "Si" else "No"
-
     calcularSueldo(10.00)
     calcularSueldo(10.00, 15.00)
     calcularSueldo(10.00, 12.00, 20.00)
@@ -50,16 +41,139 @@ fun main(){
     calcularSueldo(sueldo = 10.00)
     calcularSueldo(sueldo = 10.00, tasa = 15.00)
     calcularSueldo(sueldo = 10.00, tasa = 12.00, bonoEspecial = 20.00)
-
     calcularSueldo(sueldo = 10.00, bonoEspecial = 20.00) // Named Parameters
     calcularSueldo(10.00, bonoEspecial = 20.00) // Named Parameters
-
     calcularSueldo(bonoEspecial = 20.00, sueldo = 10.00, tasa = 14.00) //  Parametros nombrados
-
     val sumaUno = Suma(1,1)
     val sumaDos = Suma(null, 1)
     val sumaTres = Suma(1, null)
+    val sumaCuatro = Suma(null, null)
+    sumaUno.sumar()
+    sumaDos.sumar()
+    sumaTres.sumar()
+    sumaCuatro.sumar()
+    println(Suma.pi)
+    println(Suma.elevarAlCuadrado(2))
+    println(Suma.historialSumas)
+
+
+    //ARREGLOS
+
+    //Tipos de Arreglos
+
+    //Arreglo Estático
+
+    val arregloEstatico: Array<Int> = arrayOf(1, 2, 3)
+    println(arregloEstatico)
+
+    //Arreglo Dinámico
+    val arregloDinamico: ArrayList<Int> =  arrayListOf<Int>(
+        1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+    )
+
+    println(arregloDinamico)
+    arregloDinamico.add(11)
+    arregloDinamico.add(12)
+    println(arregloDinamico)
+
+    //FOR EACH -> Unit
+    //Iterar un arreglo
+
+    val respuestaForEach: Unit = arregloDinamico
+        .forEach{ valorActual: Int ->
+            println("Valor actual:${valorActual}")
+        }
+    //it (en ingles eso) significa el elemento iterado
+    arregloDinamico.forEach{println(it)}
+
+    arregloEstatico
+        .forEachIndexed(){ indice: Int, valorActual: Int ->
+            println("Valor ${valorActual} Indice: ${indice}")
+        }
+    println(respuestaForEach)
+
+    //MAP -> Muta el arreglo (Cambia el arreglo)
+    // 1) Enviemos el nuevo valor de la iteracion
+    // 2) Nos devuelve es un NUEVO ARREGLO con los valores modificados
+
+    val respuestaMap: List<Double> = arregloDinamico
+        .map { valorActual: Int ->
+            return@map valorActual.toDouble() + 100.00
+        }
+    println(respuestaMap)
+    val respuestaMapDos = arregloDinamico.map {it + 15}
+
+
+    //filter -> FILTRAR EL ARREGLO
+    // 1) Devolver una expresion (TRUE o FALSE)
+    // 2) Nuevo arreglo filtrado
+
+    val respuestaFilter: List<Int> = arregloDinamico
+        .filter { valorActual: Int ->
+            //Expresion Condicion
+            val mayoresACinco: Boolean = valorActual > 5
+            return@filter mayoresACinco
+        }
+    val respuestaFilterDos = arregloDinamico.filter {it <= 5}
+    println(respuestaFilter)
+    println(respuestaFilterDos)
+
+
+    // OR AND
+    // AND -> ALL (Todos cumplen?)  Devuelven Booleano
+
+    // OR -> ANY (Alguno cumple?)
+    // V AND V -> V / V AND F -> F
+    // V OR V -> V / V OR F -> V / F OR F -> F  Devuelven Booleano
+
+    val respuestaAny: Boolean = arregloDinamico
+        .any {valorActual: Int ->
+            return@any (valorActual > 5)
+        }
+    println(respuestaAny) //true
+
+    val respuestaAll: Boolean = arregloDinamico
+        .all { valorActual: Int ->
+            return@all (valorActual > 5)
+        }
+    println(respuestaAll) //false
+git
+    //REDUCE -> Valor acumulado
+    // Valor acumulado = 0 (Siempre 0 en el lenguaje Kotlin)
+    // [1, 2, 3, 4, 5] -> Sumeme todos los valore del arreglo
+    // valorIteracion1 = valorEmpieza + 1 = 0 + 1 = 1 -> Iteracion 1
+    // valorIteracion2 = valorIteracion1 + 2 = 1 + 2 = 3 -> Iteracion 2
+    // valorIteracion3 = valorIteracion2 + 3 = 3 + 3 = 6 -> Iteracion 3
+    // valorIteracion4 = valorIteracion3 + 4 = 6 + 4 = 10 -> Iteracion 4
+    // valorIteracion5 = valorIteracion4 + 5 = 10 + 5 = 15 -> Iteracion 5
+
+    val respuestaReduce: Int = arregloDinamico
+        .reduce{ //acumulado = 0 -> SIEMPRE EMPIEZA EN CERO
+            acumulado: Int, valorActual: Int ->
+            return@reduce (acumulado + valorActual) // -> Logica negocio
+        }
+    println(respuestaReduce) //78
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 abstract class NumerosJava{
@@ -74,8 +188,6 @@ abstract class NumerosJava{
         println("Inicializando")
     }
 }
-
-
 abstract class Numeros( // Constructor PRIMARIO
     // Ejemplo:
     // unoProp: Int, // (Parametro (sin modificador de acceso))
@@ -95,8 +207,6 @@ abstract class Numeros( // Constructor PRIMARIO
         println("Inicializando")
     }
 }
-
-
 class Suma( // Constructor Primario Suma
     uno: Int, // Parametro
     dos: Int // Parametro
@@ -105,7 +215,6 @@ class Suma( // Constructor Primario Suma
         this.numeroUno; numeroUno;
         this.numeroDos; numeroDos;
     }
-
     constructor(//  Segundo constructor
         uno: Int?, // parametros
         dos: Int // parametros
@@ -115,7 +224,6 @@ class Suma( // Constructor Primario Suma
     ) { // si necesitamos bloque de codigo lo usamos
         numeroUno;
     }
-
     constructor(//  tercer constructor
         uno: Int, // parametros
         dos: Int? // parametros
@@ -124,10 +232,35 @@ class Suma( // Constructor Primario Suma
         if (dos == null) 0 else uno
     )
     // Si no lo necesitamos al bloque de codigo "{}" lo omitimos
+
+    constructor(//  cuarto constructor
+        uno: Int?, // parametros
+        dos: Int? // parametros
+    ) : this(  // llamada constructor primario
+        if (uno == null) 0 else uno,
+        if (dos == null) 0 else uno
+    )
+
+
+    // public por defecto, o usar private o protected
+    public fun sumar(): Int {
+        val total = numeroUno + numeroDos
+        agregarHistorial(total)
+        return total
+    }
+    companion object { // Atributos y Metodos "Compartidos"
+        // entre las instancias
+        val pi = 3.14
+        fun elevarAlCuadrado(num: Int): Int {
+            return num * num
+        }
+        val historialSumas = arrayListOf<Int>()
+        fun agregarHistorial(valorNuevaSuma:Int){
+            historialSumas.add(valorNuevaSuma)
+        }
+    }
+
 }
-
-
-
 // void -> Unit
 fun imprimirNombre(nombre: String): Unit{
     // "Nombre: " + variable + " bienvenido";
