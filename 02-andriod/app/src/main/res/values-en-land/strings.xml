@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="texto_saludo">Cambio 1</string>
+    <color name="color_texto">#E72B66</color>
+    <color name="background">#2196F3</color>
+</resources>

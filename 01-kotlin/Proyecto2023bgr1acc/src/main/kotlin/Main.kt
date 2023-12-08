@@ -58,11 +58,8 @@ fun main(){
 
 
     //ARREGLOS
-
     //Tipos de Arreglos
-
     //Arreglo Estático
-
     val arregloEstatico: Array<Int> = arrayOf(1, 2, 3)
     println(arregloEstatico)
 
@@ -121,11 +118,9 @@ fun main(){
 
     // OR AND
     // AND -> ALL (Todos cumplen?)  Devuelven Booleano
-
     // OR -> ANY (Alguno cumple?)
     // V AND V -> V / V AND F -> F
     // V OR V -> V / V OR F -> V / F OR F -> F  Devuelven Booleano
-
     val respuestaAny: Boolean = arregloDinamico
         .any {valorActual: Int ->
             return@any (valorActual > 5)
@@ -137,7 +132,8 @@ fun main(){
             return@all (valorActual > 5)
         }
     println(respuestaAll) //false
-git
+
+
     //REDUCE -> Valor acumulado
     // Valor acumulado = 0 (Siempre 0 en el lenguaje Kotlin)
     // [1, 2, 3, 4, 5] -> Sumeme todos los valore del arreglo
