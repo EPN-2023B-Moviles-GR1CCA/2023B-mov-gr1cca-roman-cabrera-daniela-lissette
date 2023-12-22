@@ -1,6 +1,12 @@
 <resources>
-    <string name="app_name">Gr1accdlrc2023b</string>
+    <string name="app_name" translatable="false">Gr1accdlrc2023b</string>
     <string name="texto_saludo">Hola</string>
     <color name="color_texto">#CEE46D</color>
     <color name="background">#E46D6D</color>
+
+    <string-array name="string_array_opciones_dialogo">
+        <item>Lunes</item>
+        <item>Martes</item>
+        <item>Miercoles</item>
+    </string-array>
 </resources>
