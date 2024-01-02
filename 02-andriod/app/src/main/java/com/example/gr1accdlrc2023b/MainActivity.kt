@@ -1,4 +1,4 @@
-package com.example.gr1accvaes2023b
+package com.example.gr1accdlrc2023b
 
 import android.app.Activity
 import android.content.Intent
@@ -66,7 +66,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        setContentView(R.layout.activity_main)
         val botonCicloVida = findViewById<Button>(R.id.btn_ciclo_vida)
+
         botonCicloVida
             .setOnClickListener {
                 irActividad(ACicloVida::class.java)
