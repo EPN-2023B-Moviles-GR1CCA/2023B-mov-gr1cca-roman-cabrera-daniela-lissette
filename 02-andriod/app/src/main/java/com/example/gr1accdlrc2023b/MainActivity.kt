@@ -8,10 +8,6 @@ import android.provider.ContactsContract
 import android.widget.Button
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import com.example.gr1accdlrc2023b.ACicloVida
-import com.example.gr1accdlrc2023b.BListView
-import com.example.gr1accdlrc2023b.CIntentExplicitoParametros
-import com.example.gr1accdlrc2023b.R
 import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
@@ -105,6 +101,12 @@ class MainActivity : AppCompatActivity() {
         botonSqlite
             .setOnClickListener {
                 irActividad(ECrudEntrenador::class.java)
+            }
+
+        val botonRView = findViewById<Button>(R.id.btn_revcycler_view)
+        botonRView
+            .setOnClickListener {
+                irActividad(FRecyclerView::class.java)
             }
     } // Termina onCreate
     fun abrirActividadConParametros(
