@@ -26,4 +26,5 @@
         app:layout_constraintEnd_toEndOf="@+id/rv_entrenadores"
         app:layout_constraintHorizontal_bias="0.455"
         app:layout_constraintStart_toStartOf="@+id/rv_entrenadores" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
