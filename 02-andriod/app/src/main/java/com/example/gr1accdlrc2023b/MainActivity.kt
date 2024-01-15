@@ -67,7 +67,7 @@ class MainActivity : AppCompatActivity() {
         //Base de Datos sqlite
         EBaseDeDatos.tablaEntrenador = ESqliteHelperEntrenador(this)
 
-        val botonCicloVida = findViewById<Button>(R.id.btn_ciclo_vida)
+        val botonCicloVida = findViewById<Button>(R.id.btn_ciclo_vida2)
 
         botonCicloVida
             .setOnClickListener {
