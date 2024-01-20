@@ -1,6 +1,8 @@
 package com.example.examenib.database
 
+import com.example.examenib.models.Album
 import java.util.Date
+
 
 class CrudAlbum {
     fun crearAlbum(
@@ -8,19 +10,18 @@ class CrudAlbum {
         nombre: String,
         fechaLanzamiento: Date,
         duracion: Int,
-        idArtista: Int, // ID del artista asociado al álbum
+        idArtista: Int,
         esColaborativo: Boolean
     ) {
-        val album = Album(
+        val cancion = Album(
             id,
             nombre,
             duracion,
-            idArtista, // Asignar el ID del artista al álbum
+            BDMemoria.arregloArtista.find { artista -> artista.id == idArtista }!!,
             esColaborativo,
             fechaLanzamiento
         )
-
-        DBMemoria.arregloAlbum.add(album)
+        BDMemoria.arregloAlbum.add(cancion)
     }
 
     fun editarAlbum(
@@ -28,25 +29,25 @@ class CrudAlbum {
         nombre: String,
         fechaLanzamiento: Date,
         duracion: Int,
-        idArtista: Int, // ID del artista asociado al álbum
+        idArtista: Int,
         esColaborativo: Boolean
     ) {
         val album = Album(
             id,
             nombre,
             duracion,
-            idArtista, // Asignar el ID del artista al álbum
+            BDMemoria.arregloArtista.find { artista -> artista.id == idArtista }!!,
             esColaborativo,
             fechaLanzamiento
         )
 
         var posicion = -1
 
-        DBMemoria.arregloAlbum.forEachIndexed { index, album ->
+        BDMemoria.arregloAlbum.forEachIndexed { index, album ->
             if (album.id == id) {
                 posicion = index
             }
         }
-        DBMemoria.arregloAlbum[posicion] = album
+        BDMemoria.arregloAlbum[posicion] = album
     }
 }
