@@ -1,9 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.ExamenIB" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <!-- Solo el estilo Theme.ExamenIB -->
+    <style name="Theme.ExamenIB" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Puedes agregar personalizaciones aquí -->
+        <item name="colorPrimary">@color/color_naranja</item>
+        <item name="android:statusBarColor">@color/color_naranja</item>
+        <item name="android:navigationBarColor">@color/color_naranja</item>
     </style>
-
-    <style name="Theme.ExamenIB" parent="Base.Theme.ExamenIB" />
 </resources>

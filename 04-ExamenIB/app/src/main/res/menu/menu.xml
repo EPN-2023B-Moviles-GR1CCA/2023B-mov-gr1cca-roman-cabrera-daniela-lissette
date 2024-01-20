@@ -4,17 +4,11 @@
 
     <item
         android:id="@+id/mi_editar"
-        android:title="Editar"
-        app:itemIconTint="@color/colorMenuItemNormal"
-        app:itemTextColor="@color/colorMenuItemNormal"/>
+        android:title="Editar" />
     <item
         android:id="@+id/mi_eliminar"
-        android:title="Eliminar"
-        app:itemIconTint="@color/colorMenuItemNormal"
-        app:itemTextColor="@color/colorMenuItemNormal"/>
+        android:title="Eliminar" />
     <item
         android:id="@+id/mi_ver_albumes"
-        android:title="Ver Albumes"
-        app:itemIconTint="@color/colorMenuItemNormal"
-        app:itemTextColor="@color/colorMenuItemNormal"/>
+        android:title="Ver Albumes"/>
 </menu>

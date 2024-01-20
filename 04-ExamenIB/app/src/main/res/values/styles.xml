@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="colorPrimary">@color/tu_color_naranja</item>
-        <item name="android:statusBarColor">@color/tu_color_naranja</item>
-        <item name="android:navigationBarColor">@color/tu_color_naranja</item>
-    </style>
-    <style name="Theme.ExamenIB" parent="AppTheme">
+        <item name="colorPrimary">@color/color_naranja</item>
+        <item name="android:statusBarColor">@color/color_naranja</item>
+        <item name="android:navigationBarColor">@color/color_naranja</item>
     </style>
 </resources>
