@@ -16,26 +16,33 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/et_id_a"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.066" />
+        app:layout_constraintVertical_bias="0.612" />
 
-    <EditText
-        android:id="@+id/et_id_a"
+    <CheckBox
+        android:id="@+id/chk_colaborativo_album"
         android:layout_width="273dp"
         android:layout_height="53dp"
-        android:editable="false"
-        android:ems="10"
-        android:enabled="false"
-        android:hint="Ingrese el id"
-        android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/et_nombre_a"
+        android:text="Colaborativo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.058" />
+        tools:layout_editor_absoluteY="491dp" />
+
+    <EditText
+        android:id="@+id/et_fecha_a"
+        android:layout_width="273dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Fecha (dd/mm/aaaa)"
+        android:inputType="datetime|date"
+        app:layout_constraintBottom_toTopOf="@+id/chk_colaborativo_album"
+        app:layout_constraintEnd_toEndOf="@+id/chk_colaborativo_album"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/chk_colaborativo_album"
+        app:layout_constraintTop_toBottomOf="@+id/et_duracion_a"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/et_nombre_a"
@@ -44,78 +51,65 @@
         android:ems="10"
         android:hint="Ingrese el nombre"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/et_duracion_a"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_id_a"
-        app:layout_constraintVertical_bias="0.03" />
+        app:layout_constraintEnd_toEndOf="@+id/et_duracion_a"
+        app:layout_constraintStart_toStartOf="@+id/et_duracion_a"
+        tools:layout_editor_absoluteY="263dp" />
+
+    <EditText
+        android:id="@+id/et_id_a"
+        android:layout_width="273dp"
+        android:layout_height="53dp"
+        android:layout_marginBottom="32dp"
+        android:editable="false"
+        android:ems="10"
+        android:enabled="false"
+        android:hint="Ingrese el id"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/et_nombre_a"
+        app:layout_constraintEnd_toEndOf="@+id/et_nombre_a"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/et_nombre_a" />
 
     <EditText
         android:id="@+id/et_duracion_a"
         android:layout_width="273dp"
         android:layout_height="53dp"
+        android:layout_marginTop="24dp"
         android:ems="10"
         android:hint="Ingrese la duración"
         android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/chk_colaborativo_album"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_nombre_a"
-        app:layout_constraintVertical_bias="0.053" />
-
-    <CheckBox
-        android:id="@+id/chk_colaborativo_album"
-        android:layout_width="273dp"
-        android:layout_height="53dp"
-        android:text="Colaborativo"
-        app:layout_constraintBottom_toTopOf="@+id/et_fecha_a"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_duracion_a"
-        app:layout_constraintVertical_bias="0.128" />
-
-    <EditText
-        android:id="@+id/et_fecha_a"
-        android:layout_width="273dp"
-        android:layout_height="53dp"
-        android:ems="10"
-        android:hint="Fecha (dd/mm/aaaa)"
-        android:inputType="datetime|date"
-        app:layout_constraintBottom_toTopOf="@+id/btn_actualizar_album"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chk_colaborativo_album"
-        app:layout_constraintVertical_bias="0.077" />
-
-    <Button
-        android:id="@+id/btn_actualizar_album"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Actualizar"
-        android:backgroundTint="#FFA500"
-        app:cornerRadius="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.283"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_fecha_a"
-        app:layout_constraintVertical_bias="0.187" />
+        app:layout_constraintEnd_toEndOf="@+id/et_fecha_a"
+        app:layout_constraintStart_toStartOf="@+id/et_fecha_a"
+        app:layout_constraintTop_toBottomOf="@+id/et_nombre_a" />
 
     <Button
         android:id="@+id/btn_back_edit_a"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cancelar"
+        android:layout_marginStart="135dp"
         android:backgroundTint="#FFA500"
+        android:text="Cancelar"
         app:cornerRadius="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.296"
-        app:layout_constraintStart_toEndOf="@+id/btn_actualizar_album"
-        app:layout_constraintTop_toBottomOf="@+id/et_fecha_a"
-        app:layout_constraintVertical_bias="0.505" />
+        app:layout_constraintHorizontal_bias="0.532"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chk_colaborativo_album"
+        app:layout_constraintVertical_bias="0.46" />
+
+    <Button
+        android:id="@+id/btn_actualizar_album"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:backgroundTint="#FFA500"
+        android:text="Actualizar"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.258"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chk_colaborativo_album"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,10 +8,10 @@
     tools:context="com.example.examenib.MainActivity">
 
 
-<ListView
+    <ListView
         android:id="@+id/lv_list_artista"
-        android:layout_width="328dp"
-        android:layout_height="313dp"
+        android:layout_width="321dp"
+        android:layout_height="287dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,10 +28,10 @@
         app:cornerRadius="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.873"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.156" />
+        app:layout_constraintVertical_bias="0.885" />
 
     <TextView
         android:id="@+id/textView"
@@ -45,5 +45,5 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.278" />
+        app:layout_constraintVertical_bias="0.648" />
 </androidx.constraintlayout.widget.ConstraintLayout>

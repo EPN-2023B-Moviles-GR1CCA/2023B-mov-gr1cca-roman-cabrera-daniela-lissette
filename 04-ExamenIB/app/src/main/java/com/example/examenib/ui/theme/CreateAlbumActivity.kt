@@ -9,12 +9,12 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.examenib.R
 import com.example.examenib.database.CrudAlbum
 import com.google.android.material.snackbar.Snackbar
+import java.lang.Integer.parseInt
 import java.text.SimpleDateFormat
 
 class CreateAlbumActivity : AppCompatActivity() {
 
     var idArtista = ""
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_album)
@@ -29,11 +29,8 @@ class CreateAlbumActivity : AppCompatActivity() {
 
         val btnBack = findViewById<Button>(R.id.btn_back_create_album)
         btnBack.setOnClickListener {
-            // Crear un Intent para iniciar Ver Álbumes
             val intent = Intent(this, VerAlbumesActivity::class.java)
-            // Pasar el parámetro "idArtista" al Intent
-            intent.putExtra("idArtista", idArtista)
-            // Iniciar la actividad VerAlbumesActivity
+            intent.putExtra("id", idArtista)
             startActivity(intent)
         }
     }
@@ -41,6 +38,7 @@ class CreateAlbumActivity : AppCompatActivity() {
     fun crearAlbum() {
         val id = findViewById<EditText>(R.id.input_id_album)
         val nombre = findViewById<EditText>(R.id.input_nombre_album)
+        val idartista= parseInt(idArtista)
         val fechaLanzamiento = findViewById<EditText>(R.id.input_fecha_lanzamiento_album)
         val duracion = findViewById<EditText>(R.id.input_duracion_album)
         val esColaborativo = findViewById<CheckBox>(R.id.chk_colaborativo_album).isChecked
@@ -50,25 +48,22 @@ class CreateAlbumActivity : AppCompatActivity() {
             nombre.text.toString(),
             SimpleDateFormat("dd/MM/yyyy").parse(fechaLanzamiento.text.toString()),
             duracion.text.toString().toInt(),
-            idArtista.toInt(),
-            esColaborativo
+            idartista,
+            esColaborativo,
         )
 
-        mostrarSnackbar("Se ha creado el álbum ${nombre.text} y el ID del artista es $idArtista")
+        mostrarSnackbar("Se ha creado el álbum ${nombre.text} y el ID del artista es $idartista")
 
-        // Crear un Intent para iniciar Ver Álbumes
         val intent = Intent(this, VerAlbumesActivity::class.java)
-        // Pasar el parámetro "idArtista" al Intent
-        intent.putExtra("idArtista", idArtista)
-        // Iniciar la actividad VerAlbumesActivity
+        intent.putExtra("id", idArtista)
         startActivity(intent)
     }
 
     fun mostrarSnackbar(texto: String) {
         Snackbar.make(
-            findViewById(R.id.form_create_album), // view
-            texto, // texto
-            Snackbar.LENGTH_LONG // tiempo
+            findViewById(R.id.form_create_album),
+            texto,
+            Snackbar.LENGTH_LONG
         ).show()
     }
 }

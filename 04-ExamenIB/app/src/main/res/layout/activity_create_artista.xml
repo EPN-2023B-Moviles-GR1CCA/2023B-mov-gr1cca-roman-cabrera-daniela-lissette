@@ -34,7 +34,21 @@
         app:layout_constraintHorizontal_bias="0.137"
         app:layout_constraintStart_toEndOf="@+id/btn_crear_artista"
         app:layout_constraintTop_toBottomOf="@+id/input_calificacion"
-        app:layout_constraintVertical_bias="0.156" />
+        app:layout_constraintVertical_bias="0.248" />
+
+    <Button
+        android:id="@+id/btn_crear_artista"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FFA500"
+        android:text="Crear"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.337"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_calificacion"
+        app:layout_constraintVertical_bias="0.248" />
 
     <EditText
         android:id="@+id/input_nombre"
@@ -94,20 +108,6 @@
         app:layout_constraintStart_toStartOf="@+id/input_calificacion"
         app:layout_constraintTop_toBottomOf="@+id/input_fecha_nacimiento"
         app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/btn_crear_artista"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#FFA500"
-        android:text="Crear"
-        app:cornerRadius="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.337"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_calificacion"
-        app:layout_constraintVertical_bias="0.156" />
 
     <EditText
         android:id="@+id/input_calificacion"

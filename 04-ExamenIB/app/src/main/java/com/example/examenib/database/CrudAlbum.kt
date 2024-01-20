@@ -13,7 +13,7 @@ class CrudAlbum {
         idArtista: Int,
         esColaborativo: Boolean
     ) {
-        val cancion = Album(
+        val album = Album(
             id,
             nombre,
             duracion,
@@ -21,7 +21,7 @@ class CrudAlbum {
             esColaborativo,
             fechaLanzamiento
         )
-        BDMemoria.arregloAlbum.add(cancion)
+        BDMemoria.arregloAlbum.add(album)
     }
 
     fun editarAlbum(

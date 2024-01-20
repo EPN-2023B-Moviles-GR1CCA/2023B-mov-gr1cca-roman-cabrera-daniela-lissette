@@ -18,7 +18,6 @@ class CrudArtista {
             descripcion,
             calificacion
         )
-
         BDMemoria.arregloArtista.add(artista)
     }
 
@@ -37,18 +36,15 @@ class CrudArtista {
             calificacion
         )
 
-        val artistaAux = BDMemoria.arregloArtista.find { artista ->
-            artista.id == id
+        val artistaAux = BDMemoria.arregloArtista.find { artista -> artista.id == id
         }
 
         val posicion = BDMemoria.arregloArtista.indexOf(artistaAux)
         BDMemoria.arregloArtista[posicion] = artista
-
     }
 
     fun eliminarAlbumesDelArtista(id: Int) {
-        val albumes = BDMemoria.arregloAlbum.filter { album ->
-            album.artista.id == id
+        val albumes = BDMemoria.arregloAlbum.filter { album ->  album.artista.id == id
         }
 
         albumes.forEach { album ->

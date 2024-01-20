@@ -12,16 +12,17 @@ import com.example.examenib.database.CrudArtista
 import com.example.examenib.database.BDMemoria
 import com.example.examenib.models.Artista
 import com.google.android.material.snackbar.Snackbar
+import java.lang.Integer.parseInt
 import java.text.SimpleDateFormat
 
 class EditArtistaActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_artista)
-        val idArtista = intent.getIntExtra("idArtista", 0)
+        val idArtista = intent.getStringExtra("id")
 
         val artista =
-            BDMemoria.arregloArtista.find { artista -> artista.id == idArtista }
+            BDMemoria.arregloArtista.find { artista -> artista.id == parseInt(idArtista) }
         llenarInputs(artista!!)
         mostrarSnackbar("$artista")
 
@@ -41,9 +42,9 @@ class EditArtistaActivity : AppCompatActivity() {
     fun mostrarSnackbar(texto: String) {
         Snackbar
             .make(
-                findViewById(R.id.form_edit_artista), // view
-                texto, // texto
-                Snackbar.LENGTH_LONG // tiempo
+                findViewById(R.id.form_edit_artista),
+                texto,
+                Snackbar.LENGTH_LONG
             )
             .show()
     }

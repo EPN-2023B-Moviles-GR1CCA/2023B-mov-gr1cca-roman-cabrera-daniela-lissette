@@ -30,7 +30,6 @@ class CreateArtistaActivity : AppCompatActivity() {
     }
 
     fun crearArtista() {
-        // Obtener componentes visuales
         val id = findViewById<EditText>(R.id.input_id)
         val nombre = findViewById<EditText>(R.id.input_nombre)
         val fechaNacimiento = findViewById<EditText>(R.id.input_fecha_nacimiento)
@@ -50,9 +49,9 @@ class CreateArtistaActivity : AppCompatActivity() {
 
     fun mostrarSnackbar(texto: String) {
         Snackbar.make(
-            findViewById(R.id.form_create_artista), // view
-            texto, // texto
-            Snackbar.LENGTH_LONG // tiempo
+            findViewById(R.id.form_create_artista),
+            texto,
+            Snackbar.LENGTH_LONG
         ).show()
     }
 

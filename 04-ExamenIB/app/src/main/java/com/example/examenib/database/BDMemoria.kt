@@ -12,7 +12,6 @@ class BDMemoria {
         val arregloAlbum = arrayListOf<Album>()
 
         init {
-            try {
                 arregloArtista.add(
                     Artista(
                         1,
@@ -122,11 +121,6 @@ class BDMemoria {
                         SimpleDateFormat("dd/MM/yyyy").parse("25/07/1980")
                     )
                 )
-
-            } catch (e: ParseException) {
-                // Manejar la excepción de análisis de fecha aquí
-                e.printStackTrace()
-            }
         }
     }
 }

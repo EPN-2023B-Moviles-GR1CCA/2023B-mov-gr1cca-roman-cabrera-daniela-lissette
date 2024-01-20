@@ -7,20 +7,6 @@
     android:layout_height="match_parent"
     tools:context="com.example.examenib.ui.theme.EditArtistaActivity">
 
-    <TextView
-        android:id="@+id/title_form_edit_artista"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Editar Artista"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.056" />
-
     <EditText
         android:id="@+id/et_id_artista"
         android:layout_width="292dp"
@@ -34,22 +20,20 @@
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title_form_edit_artista"
-        app:layout_constraintVertical_bias="0.065" />
+        app:layout_constraintVertical_bias="0.07" />
 
-    <EditText
-        android:id="@+id/et_nombre_artista"
-        android:layout_width="292dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:hint="Ingrese el nombre"
-        android:inputType="text"
+    <TextView
+        android:id="@+id/title_form_edit_artista"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Editar Artista"
+        android:textColor="#000000"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_id_artista"
-        app:layout_constraintVertical_bias="0.009" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.143" />
 
     <EditText
         android:id="@+id/et_fecha_nacimiento_artista"
@@ -61,10 +45,10 @@
         android:inputType="date"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_nombre_artista"
-        app:layout_constraintVertical_bias="0.006" />
+        app:layout_constraintVertical_bias="0.008" />
 
     <EditText
         android:id="@+id/et_descripcion_artista"
@@ -76,6 +60,7 @@
         android:inputType="textMultiLine"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_fecha_nacimiento_artista"
         app:layout_constraintVertical_bias="0.014" />
@@ -90,7 +75,7 @@
         android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_descripcion_artista"
         app:layout_constraintVertical_bias="0.0" />
@@ -107,7 +92,7 @@
         app:layout_constraintHorizontal_bias="0.278"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_calificacion_artista"
-        app:layout_constraintVertical_bias="0.337" />
+        app:layout_constraintVertical_bias="0.461" />
 
     <Button
         android:id="@+id/btn_back_edit_a"
@@ -122,4 +107,20 @@
         app:layout_constraintStart_toEndOf="@+id/btn_actualizar_artista"
         app:layout_constraintTop_toTopOf="@+id/btn_actualizar_artista"
         app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/et_nombre_artista"
+        android:layout_width="292dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Ingrese el nombre"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_id_artista"
+        app:layout_constraintVertical_bias="0.013" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

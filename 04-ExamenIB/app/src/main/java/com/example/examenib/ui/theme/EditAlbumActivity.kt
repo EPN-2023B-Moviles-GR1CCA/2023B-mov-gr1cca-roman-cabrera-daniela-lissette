@@ -19,9 +19,7 @@ class EditAlbumActivity : AppCompatActivity() {
         setContentView(R.layout.activity_edit_album)
 
         val idAlbum = intent.getIntExtra("idAlbum", 0)
-
         val album = BDMemoria.arregloAlbum.find { album -> album.id == idAlbum }
-
         llenarInputs(album!!)
 
         val btnActualizar = findViewById<Button>(R.id.btn_actualizar_album)
@@ -30,12 +28,14 @@ class EditAlbumActivity : AppCompatActivity() {
             mostrarSnackbar("Álbum actualizado")
 
             val intent = Intent(this, VerAlbumesActivity::class.java)
+            intent.putExtra("id", album.artista.id.toString())
             startActivity(intent)
         }
 
         val btnBack = findViewById<Button>(R.id.btn_back_edit_a)
         btnBack.setOnClickListener {
             val intent = Intent(this, VerAlbumesActivity::class.java)
+            intent.putExtra("id", album.artista.id.toString())
             startActivity(intent)
         }
     }
@@ -43,9 +43,9 @@ class EditAlbumActivity : AppCompatActivity() {
     fun mostrarSnackbar(texto: String) {
         Snackbar
             .make(
-                findViewById(R.id.form_edit_album), // view
-                texto, // texto
-                Snackbar.LENGTH_LONG // tiempo
+                findViewById(R.id.form_edit_album),
+                texto,
+                Snackbar.LENGTH_LONG
             )
             .show()
     }

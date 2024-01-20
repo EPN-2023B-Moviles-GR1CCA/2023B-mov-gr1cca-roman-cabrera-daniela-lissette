@@ -32,10 +32,8 @@ class VerAlbumesActivity : AppCompatActivity() {
         menuInfo: ContextMenu.ContextMenuInfo?
     ) {
         super.onCreateContextMenu(menu, v, menuInfo)
-        // Llenamos las opciones del menu
         val inflater = menuInflater
         inflater.inflate(R.menu.menu_album, menu)
-        // Obtener el id del ArrayListSeleccionado
         val info = menuInfo as AdapterView.AdapterContextMenuInfo
         val posicion = info.position
         posicionItemSeleccionado = posicion
@@ -49,12 +47,10 @@ class VerAlbumesActivity : AppCompatActivity() {
                 startActivity(intent)
                 return true
             }
-
             R.id.mi_eliminar -> {
                 abrirDialogo(posicionItemSeleccionado)
                 return true
             }
-
             else -> super.onContextItemSelected(item)
         }
     }
@@ -81,11 +77,8 @@ class VerAlbumesActivity : AppCompatActivity() {
 
         val btnCrearAlbum = findViewById<Button>(R.id.btn_ir_crear_album)
         btnCrearAlbum.setOnClickListener {
-            // Crear un Intent para iniciar CreateAlbumActivity
             val intentCreate = Intent(this, CreateAlbumActivity::class.java)
-            // Pasar el parámetro "idArtista" al Intent
             intentCreate.putExtra("idArtista", idArtista)
-            // Iniciar la actividad CreateAlbumActivity
             startActivity(intentCreate)
         }
 
@@ -98,13 +91,12 @@ class VerAlbumesActivity : AppCompatActivity() {
     fun mostrarSnackbar(texto: String) {
         Snackbar
             .make(
-                findViewById(R.id.id_layout_intents), // view
-                texto, // texto
-                Snackbar.LENGTH_LONG // tiempo
+                findViewById(R.id.id_layout_intents),
+                texto,
+                Snackbar.LENGTH_LONG
             )
             .show()
     }
-
 
     fun irActividad(
         clase: Class<*>
@@ -115,6 +107,7 @@ class VerAlbumesActivity : AppCompatActivity() {
 
 
     fun eliminarAlbum(id: Int) {
+
         val listView = findViewById<ListView>(R.id.lv_list_albumes)
         val adaptador = ArrayAdapter(
             this,
@@ -125,6 +118,7 @@ class VerAlbumesActivity : AppCompatActivity() {
         adaptador.notifyDataSetChanged()
         val idAlbumAEliminar = arregloAlbumesPorArtista[id].id
         arregloAlbumesPorArtista.removeAt(id)
+
         BDMemoria.arregloAlbum.removeIf { album -> album.id == idAlbumAEliminar }
     }
 
