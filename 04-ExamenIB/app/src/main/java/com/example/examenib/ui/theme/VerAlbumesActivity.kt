@@ -67,7 +67,7 @@ class VerAlbumesActivity : AppCompatActivity() {
         mostrarSnackbar("Ver álbumes de: $idArtista")
 
         arregloAlbumesPorArtista =
-            arregloAlbumes.filter { album -> album.idArtista.id == parseInt(idArtista) } as ArrayList<Album>
+            arregloAlbumes.filter { album -> album.artista.id == parseInt(idArtista) } as ArrayList<Album>
 
         val listView = findViewById<ListView>(R.id.lv_list_albumes)
         val adaptador = ArrayAdapter(

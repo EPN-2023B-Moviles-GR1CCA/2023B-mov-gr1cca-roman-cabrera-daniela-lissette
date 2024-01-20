@@ -72,7 +72,7 @@ class EditAlbumActivity : AppCompatActivity() {
         val esColaborativo = findViewById<CheckBox>(R.id.chk_colaborativo_album)
         val idAlbum = intent.getIntExtra("idAlbum", 0)
         val album = BDMemoria.arregloAlbum.find { album -> album.id == idAlbum }
-        val idartista = album!!.idArtista.id
+        val idartista = album!!.artista.id
 
         CrudAlbum().editarAlbum(
             id.text.toString().toInt(),
