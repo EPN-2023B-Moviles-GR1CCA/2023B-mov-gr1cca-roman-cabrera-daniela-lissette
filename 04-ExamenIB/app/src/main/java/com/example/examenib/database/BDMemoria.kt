@@ -2,7 +2,6 @@ package com.example.examenib.database
 
 import com.example.examenib.models.Album
 import com.example.examenib.models.Artista
-import java.text.ParseException
 import java.text.SimpleDateFormat
 
 class BDMemoria {
