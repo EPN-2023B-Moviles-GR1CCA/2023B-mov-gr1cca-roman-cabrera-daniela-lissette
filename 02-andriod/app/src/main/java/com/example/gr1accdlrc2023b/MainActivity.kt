@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //Base de Datos sqlite
+        // Base de datos sqlite
         EBaseDeDatos.tablaEntrenador = ESqliteHelperEntrenador(this)
 
         val botonCicloVida = findViewById<Button>(R.id.btn_ciclo_vida2)
@@ -103,6 +103,7 @@ class MainActivity : AppCompatActivity() {
                 irActividad(ECrudEntrenador::class.java)
             }
 
+
         val botonRView = findViewById<Button>(R.id.btn_revcycler_view)
         botonRView
             .setOnClickListener {
@@ -115,10 +116,11 @@ class MainActivity : AppCompatActivity() {
                 irActividad(GGoogleMapsActivity::class.java)
             }
 
+
         val botonFirebaseUI = findViewById<Button>(R.id.btn_intent_firebase_ui)
         botonFirebaseUI
             .setOnClickListener {
-                irActividad(GGoogleMapsActivity::class.java)
+                irActividad(HFirebaseUIAuth::class.java)
             }
 
     } // Termina onCreate
