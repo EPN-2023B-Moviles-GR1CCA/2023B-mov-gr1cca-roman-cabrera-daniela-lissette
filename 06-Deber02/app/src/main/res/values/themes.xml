@@ -1,0 +1,9 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Solo el estilo Theme.ExamenIB -->
+    <style name="Theme.ExamenIB" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Puedes agregar personalizaciones aquí -->
+        <item name="colorPrimary">@color/color_naranja</item>
+        <item name="android:statusBarColor">@color/color_naranja</item>
+        <item name="android:navigationBarColor">@color/color_naranja</item>
+    </style>
+</resources>
