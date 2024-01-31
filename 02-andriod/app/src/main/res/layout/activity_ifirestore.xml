@@ -55,7 +55,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginBottom="36dp"
+        android:layout_marginBottom="40dp"
         android:text="IN. COMP"
         app:layout_constraintBottom_toTopOf="@+id/btn_fs_epaginar"
         app:layout_constraintStart_toStartOf="@+id/btn_fs_datos_prueba" />
@@ -64,7 +64,7 @@
         android:id="@+id/btn_fs_crear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="16dp"
         android:text="CREAR"
         app:layout_constraintBottom_toBottomOf="@+id/btn_fs_ind_comp"
         app:layout_constraintStart_toEndOf="@+id/btn_fs_ind_comp"
@@ -88,7 +88,7 @@
         android:layout_height="wrap_content"
         android:text="E. PAGINAR"
         app:layout_constraintStart_toStartOf="@+id/btn_fs_ind_comp"
-        tools:layout_editor_absoluteY="263dp" />
+        tools:layout_editor_absoluteY="253dp" />
 
     <ListView
         android:id="@+id/lv_firestore"
