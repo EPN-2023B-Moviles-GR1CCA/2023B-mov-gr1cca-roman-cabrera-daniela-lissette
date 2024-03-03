@@ -1,6 +1,5 @@
 package com.example.exameniib.ui.theme
 
-import MainActivity
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle

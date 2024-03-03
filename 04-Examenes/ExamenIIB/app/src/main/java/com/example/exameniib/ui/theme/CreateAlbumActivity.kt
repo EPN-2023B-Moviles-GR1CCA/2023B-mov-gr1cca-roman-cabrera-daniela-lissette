@@ -10,6 +10,10 @@ import com.example.exameniib.R
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.firestore.FirebaseFirestore
 import java.text.SimpleDateFormat
+import java.util.Date
+import java.text.ParseException
+
+
 
 class CreateAlbumActivity : AppCompatActivity() {
 
@@ -46,29 +50,43 @@ class CreateAlbumActivity : AppCompatActivity() {
         val duracion = findViewById<EditText>(R.id.input_duracion_album)
         val esColaborativo = findViewById<CheckBox>(R.id.chk_colaborativo_album).isChecked
 
-        // Crear un mapa con los datos del álbum
-        val album = hashMapOf(
-            "id" to id.text.toString().toInt(),
-            "nombre" to nombre.text.toString(),
-            "fechaLanzamiento" to fechaLanzamiento.text.toString(),
-            "duracion" to duracion.text.toString().toInt(),
-            "idArtista" to idArtista,
-            "esColaborativo" to esColaborativo
-        )
+        val dateFormat = SimpleDateFormat("dd/MM/yyyy")
+        val fechaTexto = fechaLanzamiento.text.toString()
+        val fecha: Date? = try {
+            dateFormat.parse(fechaTexto)
+        } catch (ex: ParseException) {
+            ex.printStackTrace()
+            null
+        }
 
-        // Agregar el álbum a Firestore
-        db.collection("albumes")
-            .add(album)
-            .addOnSuccessListener { documentReference ->
-                mostrarSnackbar("Se ha creado el álbum ${nombre.text} y el ID del artista es $idArtista")
-                val intent = Intent(this, VerAlbumesActivity::class.java)
-                intent.putExtra("id", idArtista)
-                startActivity(intent)
-            }
-            .addOnFailureListener { e ->
-                mostrarSnackbar("Error al crear el álbum: $e")
-            }
+        if (fecha != null) {
+            // Crear un mapa con los datos del álbum
+            val album = hashMapOf(
+                "id" to id.text.toString().toInt(),
+                "nombre" to nombre.text.toString(),
+                "fechaLanzamiento" to fecha,
+                "duracion" to duracion.text.toString().toInt(),
+                "idArtista" to idArtista,
+                "esColaborativo" to esColaborativo
+            )
+
+            // Agregar el álbum a Firestore
+            db.collection("albumes")
+                .add(album)
+                .addOnSuccessListener { documentReference ->
+                    mostrarSnackbar("Se ha creado el álbum ${nombre.text} y el ID del artista es $idArtista")
+                    val intent = Intent(this, VerAlbumesActivity::class.java)
+                    intent.putExtra("id", idArtista)
+                    startActivity(intent)
+                }
+                .addOnFailureListener { e ->
+                    mostrarSnackbar("Error al crear el álbum: $e")
+                }
+        } else {
+            mostrarSnackbar("Formato de fecha incorrecto")
+        }
     }
+
 
     private fun mostrarSnackbar(texto: String) {
         Snackbar.make(

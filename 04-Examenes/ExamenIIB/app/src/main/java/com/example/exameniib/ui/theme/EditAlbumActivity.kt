@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
+import java.text.ParseException
+import java.util.Date
 import androidx.appcompat.app.AppCompatActivity
 import com.example.exameniib.R
 import com.example.exameniib.models.Album
@@ -82,24 +84,38 @@ class EditAlbumActivity : AppCompatActivity() {
         val fechaLanzamiento = findViewById<EditText>(R.id.et_fecha_a)
         val esColaborativo = findViewById<CheckBox>(R.id.chk_colaborativo_album)
 
-        // Crear un HashMap para los datos actualizados del álbum
-        val album = hashMapOf<String, Any>(
-            "id" to id.text.toString().toInt(),
-            "nombre" to nombre.text.toString(),
-            "duracion" to duracion.text.toString().toInt(),
-            "fechaLanzamiento" to fechaLanzamiento.text.toString(),
-            "esColaborativo" to esColaborativo.isChecked
-        )
+        val dateFormat = SimpleDateFormat("dd/MM/yyyy")
+        val fechaTexto = fechaLanzamiento.text.toString()
+        val fecha: Date? = try {
+            dateFormat.parse(fechaTexto)
+        } catch (ex: ParseException) {
+            ex.printStackTrace()
+            null
+        }
 
-        albumRef.update(album)
-            .addOnSuccessListener {
-                mostrarSnackbar("Álbum actualizado")
-                irActividad(VerAlbumesActivity::class.java)
-            }
-            .addOnFailureListener { e ->
-                mostrarSnackbar("Error al actualizar el álbum: $e")
-            }
+        if (fecha != null) {
+            // Crear un HashMap para los datos actualizados del álbum
+            val album = hashMapOf<String, Any>(
+                "id" to id.text.toString().toInt(),
+                "nombre" to nombre.text.toString(),
+                "duracion" to duracion.text.toString().toInt(),
+                "fechaLanzamiento" to fecha,
+                "esColaborativo" to esColaborativo.isChecked
+            )
+
+            albumRef.update(album)
+                .addOnSuccessListener {
+                    mostrarSnackbar("Álbum actualizado")
+                    irActividad(VerAlbumesActivity::class.java)
+                }
+                .addOnFailureListener { e ->
+                    mostrarSnackbar("Error al actualizar el álbum: $e")
+                }
+        } else {
+            mostrarSnackbar("Formato de fecha incorrecto")
+        }
     }
+
 
 
     private fun irActividad(clase: Class<*>) {
