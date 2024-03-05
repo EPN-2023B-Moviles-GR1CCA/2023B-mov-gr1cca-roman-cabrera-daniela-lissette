@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "830981094119",
+    "project_id": "back-app-moviles-chat",
+    "storage_bucket": "back-app-moviles-chat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:830981094119:android:a87fb9b3be353c84114042",
+        "android_client_info": {
+          "package_name": "com.example.easychat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "745155540833-fvdk5u97tdl1i3nje2hr4n0pnnlc9q4f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcBvmlz6h46m0uoNE_c5qhpZI0TvRsyeM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "745155540833-fvdk5u97tdl1i3nje2hr4n0pnnlc9q4f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
